@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<h3>是否確定帶走這張圖?</h3>
+<p>點擊圖片，即可立即下載！</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="center">
+    <a href="{{ photos.image.url }}" download="圖片">
+        <img src="{{ photos.image.url }}" style="height: 20em;"/>
+    </a>
+    <br/>
+    <hr/>
+    <input class="btn btn-success btn-lg" type="submit" value="確定" style="margin-right: .8em;"/>
+    <a class="btn btn-secondary btn-lg" href="{% url 'index' %}">取消</a>
+</form>
+
+{% endblock  %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block upload %}
+
+    <br>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="flex">
+            <div>
+                <a href="" class="btn btn-success">{{ form.image }}</a>
+                <input type="submit" class="btn btn-danger" value="上傳">
+            </div>
+        </div>
+    </form>
+
+{% endblock  %}
